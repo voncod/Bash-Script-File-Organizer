@@ -1,0 +1,28 @@
+#!/bin/bash
+
+BASE_DIR="/home/luan/workspace/estudos-devops"
+LOG_FILE="BASE_DIR/Bash-Script/logs/log.txt"
+
+
+for arquivo in *; do
+	[[ -d $arquivo ]] && continue
+	[[ $arquivo == "$(basename "$0")" ]] && continue
+	ext="${arquivo##*.}"
+	
+	if [[ "$arquivo" == "$ext" ]]; then
+		ext="sem_extensao"
+	fi
+
+	mkdir -p $ext
+	mv "$arquivo" "$ext/"
+	contador=$((contador + 1))
+	echo "Total de arquivos movidos: '$contador'"
+	echo "[$(date)] $arquivo -> $ext/" "$LOG_FILE"
+	 
+done
+
+
+
+
+
+	
