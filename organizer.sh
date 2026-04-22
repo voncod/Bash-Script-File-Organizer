@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_DIR="/home/luan/workspace/estudos-devops"
+BASE_DIR="$(pwd)"
 LOG_FILE="$BASE_DIR/Bash-Script/logs/log.txt"
 
 mkdir -p $(dirname "$LOG_FILE")"
